@@ -1,0 +1,26 @@
+# Diretórios e arquivos gerados pelo Godot
+.import/
+.godot/
+.export/               # Build exportada do projeto
+export.cfg             # Arquivo de configuração de exportação
+export_presets.cfg     # Arquivo de presets de exportação
+
+# Arquivos temporários e de cache
+*.tmp                  # Arquivos temporários
+*.log                  # Arquivos de log
+*.db                   # Arquivos de banco de dados temporários
+*.mono/                # Diretórios temporários gerados pelo Godot Mono
+*.jpg.import
+
+# Arquivos do sistema operacional
+.DS_Store              # macOS
+Thumbs.db              # Windows
+
+# Arquivos de backup
+*.bak                  # Arquivos de backup em geral
+*.save                 # Arquivos de backup criados pelo Godot
+*.import               # Arquivos de importação do Godot
+
+# Diretórios de IDEs e ferramentas de desenvolvimento
+.vscode/               # Diretório do Visual Studio Code
+.idea/                 # Diretório do JetBrains (como o Rider)
