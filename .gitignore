@@ -10,7 +10,7 @@ export_presets.cfg     # Arquivo de presets de exportação
 *.log                  # Arquivos de log
 *.db                   # Arquivos de banco de dados temporários
 *.mono/                # Diretórios temporários gerados pelo Godot Mono
-*.jpg.import
+*.import
 
 # Arquivos do sistema operacional
 .DS_Store              # macOS
