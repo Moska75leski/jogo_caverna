@@ -1,7 +1,71 @@
-[gd_scene load_steps=35 format=3 uid="uid://bul3dpaqe4rvh"]
+[gd_scene load_steps=53 format=3 uid="uid://bul3dpaqe4rvh"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1w6bb"]
 [ext_resource type="Texture2D" uid="uid://bkki4iwfke04c" path="res://assets/imports/mystic_woods_free_2.2/sprites/characters/player.png" id="1_j82yu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd5g5"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(0, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x4dj"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(48, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj1kc"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(96, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxd2o"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(144, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5u3q"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(0, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmkm0"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(48, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en7b0"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(96, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_biy5l"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(144, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfsyd"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(0, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl1u0"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(48, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duebv"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(96, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se5a3"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(144, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16okd"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(0, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hntre"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(48, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5wnk"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(96, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r7yc"]
+atlas = ExtResource("1_j82yu")
+region = Rect2(144, 384, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqyg1"]
 atlas = ExtResource("1_j82yu")
@@ -127,6 +191,74 @@ region = Rect2(240, 240, 48, 48)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_sd5g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x4dj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj1kc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxd2o")
+}],
+"loop": false,
+"name": &"attack_down",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5u3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmkm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en7b0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_biy5l")
+}],
+"loop": false,
+"name": &"attack_left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfsyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wl1u0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duebv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se5a3")
+}],
+"loop": false,
+"name": &"attack_right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16okd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hntre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5wnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4r7yc")
+}],
+"loop": false,
+"name": &"attack_up",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_rqyg1")
 }, {
 "duration": 1.0,
@@ -245,18 +377,73 @@ animations = [{
 radius = 9.0
 height = 26.0
 
+[sub_resource type="LabelSettings" id="LabelSettings_c6knj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jct58"]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_1w6bb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nqqer")
-animation = &"idle"
-frame = 2
-frame_progress = 0.279966
+animation = &"attack_up"
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_hohuv")
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+metadata/_edit_lock_ = true
+
+[node name="CanvasGroup2" type="CanvasGroup" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="LabelLife" type="Label" parent="CanvasGroup2"]
+offset_left = -185.0
+offset_top = -102.0
+offset_right = -115.0
+offset_bottom = -79.0
+scale = Vector2(0.4, 0.4)
+text = "Vida: 100"
+label_settings = SubResource("LabelSettings_c6knj")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasGroup"]
+offset_left = -58.0
+offset_top = 32.0
+offset_right = 59.0
+offset_bottom = 94.0
+color = Color(1, 1, 1, 0.247059)
+
+[node name="Label" type="Label" parent="CanvasGroup"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = 40.0
+offset_right = 200.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+size_flags_horizontal = 4
+text = "Deseja abrir a porta e enfrentar as consequências ?"
+label_settings = SubResource("LabelSettings_jct58")
+horizontal_alignment = 1
+autowrap_mode = 2
+justification_flags = 0
+
+[node name="Button" type="Button" parent="CanvasGroup"]
+offset_left = -9.0
+offset_top = 75.0
+offset_right = 38.0
+offset_bottom = 106.0
+scale = Vector2(0.4, 0.4)
+text = "Abrir"
