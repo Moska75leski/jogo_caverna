@@ -1,14 +1,14 @@
 [gd_scene load_steps=19 format=3 uid="uid://dd5odnl7fykqv"]
 
-[ext_resource type="Texture2D" uid="uid://boegpqbj5g87r" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0048.png" id="1_uscct"]
-[ext_resource type="Texture2D" uid="uid://dqwm25cp6cos8" path="res://assets/imports/kenney_roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_transparent.png" id="2_fj4pr"]
-[ext_resource type="Texture2D" uid="uid://b4uvpm82wx6eh" path="res://assets/imports/kenney_tiny-dungeon/Tilemap/tilemap.png" id="3_ckbjr"]
-[ext_resource type="Texture2D" uid="uid://cryqsg0vys2vb" path="res://assets/imports/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="4_5u5op"]
-[ext_resource type="Texture2D" uid="uid://b3r84gp14hu8a" path="res://assets/imports/kenney_roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_magenta.png" id="5_022vh"]
-[ext_resource type="Texture2D" uid="uid://dyqj06kp0pndj" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/dungeonDecoration_1.png" id="6_kcuby"]
-[ext_resource type="Texture2D" uid="uid://cx228ok0ey3bk" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/traps_.png" id="7_pivrs"]
-[ext_resource type="Texture2D" uid="uid://cdu3ecf1gnkkk" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/dungeonDecoration_0 [redCarpet].png" id="8_14rxr"]
-[ext_resource type="Texture2D" uid="uid://dsyxml7g400os" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/dungeonDecoration_0.png" id="9_isivr"]
+[ext_resource type="Texture2D" uid="uid://noa58qyutsbv" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0048.png" id="1_uscct"]
+[ext_resource type="Texture2D" uid="uid://b4spmphv3rgg4" path="res://assets/imports/kenney_roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_transparent.png" id="2_fj4pr"]
+[ext_resource type="Texture2D" uid="uid://dngwx8gd2xbhx" path="res://assets/imports/kenney_tiny-dungeon/Tilemap/tilemap.png" id="3_ckbjr"]
+[ext_resource type="Texture2D" uid="uid://cehi4xptmjnop" path="res://assets/imports/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="4_5u5op"]
+[ext_resource type="Texture2D" uid="uid://3i4copumjp0i" path="res://assets/imports/kenney_roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_magenta.png" id="5_022vh"]
+[ext_resource type="Texture2D" uid="uid://dxkoi4x5p4ccj" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/dungeonDecoration_1.png" id="6_kcuby"]
+[ext_resource type="Texture2D" uid="uid://b5re05yt1nfs4" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/traps_.png" id="7_pivrs"]
+[ext_resource type="Texture2D" uid="uid://x8pbo8f5cr3t" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/dungeonDecoration_0 [redCarpet].png" id="8_14rxr"]
+[ext_resource type="Texture2D" uid="uid://0opwt6pb0mrc" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/dungeonDecoration_0.png" id="9_isivr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbnrm"]
 texture = ExtResource("2_fj4pr")
