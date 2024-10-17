@@ -1,5 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://dyvn1g3iiqrql"]
+[gd_scene load_steps=37 format=3 uid="uid://dyvn1g3iiqrql"]
 
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_cexb7"]
 [ext_resource type="Texture2D" uid="uid://noa58qyutsbv" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0048.png" id="1_fqhll"]
 [ext_resource type="Texture2D" uid="uid://b4spmphv3rgg4" path="res://assets/imports/kenney_roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_transparent.png" id="2_p3oey"]
 [ext_resource type="Texture2D" uid="uid://dngwx8gd2xbhx" path="res://assets/imports/kenney_tiny-dungeon/Tilemap/tilemap.png" id="3_oxcb8"]
@@ -1580,6 +1581,7 @@ size = Vector2(32, 32)
 size = Vector2(47, 48)
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_cexb7")
 
 [node name="Player" parent="." instance=ExtResource("10_qdlth")]
 position = Vector2(79, 453)
@@ -1698,6 +1700,15 @@ tipo_porta = "Balança"
 position = Vector2(587, 37)
 tipo_porta = "Caveira"
 
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(31, 469)
+
+[node name="AreaPorta4" parent="." instance=ExtResource("14_0yynt")]
+position = Vector2(146, 444)
+tipo_porta = "Pena"
+
+[connection signal="quitGameSignal" from="Player" to="." method="quit"]
+[connection signal="restartGameSignal" from="Player" to="." method="new_game"]
 [connection signal="body_entered" from="TotemPergaminho" to="Player" method="_on_totem_pergaminho_body_entered"]
 [connection signal="body_exited" from="TotemPergaminho" to="Player" method="_on_totem_pergaminho_body_exited"]
 [connection signal="emit_body_entered" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_entered"]
@@ -1706,3 +1717,5 @@ tipo_porta = "Caveira"
 [connection signal="emit_body_exited" from="AreaPorta2" to="Player" method="_on_area_porta_emit_body_exited"]
 [connection signal="emit_body_entered" from="AreaPorta3" to="Player" method="_on_area_porta_emit_body_entered"]
 [connection signal="emit_body_exited" from="AreaPorta3" to="Player" method="_on_area_porta_emit_body_exited"]
+[connection signal="emit_body_entered" from="AreaPorta4" to="Player" method="_on_area_porta_emit_body_entered"]
+[connection signal="emit_body_exited" from="AreaPorta4" to="Player" method="_on_area_porta_emit_body_exited"]
