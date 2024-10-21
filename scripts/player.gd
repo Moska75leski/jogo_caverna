@@ -18,8 +18,8 @@ var dead = false
 var tipo_porta = ""
 
 func _ready() -> void:
-	$InfoPress.visible = false
-	$Information.visible = false
+	#$InfoPress.visible = false
+	#$Information.visible = false
 	screen_size = get_viewport_rect().size
 
 func _process(delta: float) -> void:
