@@ -1,20 +1,22 @@
-[gd_scene load_steps=37 format=3 uid="uid://dyvn1g3iiqrql"]
+[gd_scene load_steps=39 format=3 uid="uid://dyvn1g3iiqrql"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_cexb7"]
-[ext_resource type="Texture2D" uid="uid://noa58qyutsbv" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0048.png" id="1_fqhll"]
-[ext_resource type="Texture2D" uid="uid://b4spmphv3rgg4" path="res://assets/imports/kenney_roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_transparent.png" id="2_p3oey"]
-[ext_resource type="Texture2D" uid="uid://dngwx8gd2xbhx" path="res://assets/imports/kenney_tiny-dungeon/Tilemap/tilemap.png" id="3_oxcb8"]
-[ext_resource type="Texture2D" uid="uid://cehi4xptmjnop" path="res://assets/imports/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="4_cf7aa"]
-[ext_resource type="Texture2D" uid="uid://3i4copumjp0i" path="res://assets/imports/kenney_roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_magenta.png" id="5_7kks3"]
-[ext_resource type="Texture2D" uid="uid://dxkoi4x5p4ccj" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/dungeonDecoration_1.png" id="6_4tl1j"]
-[ext_resource type="Texture2D" uid="uid://b5re05yt1nfs4" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/traps_.png" id="7_fvgqb"]
-[ext_resource type="Texture2D" uid="uid://x8pbo8f5cr3t" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/dungeonDecoration_0 [redCarpet].png" id="8_nudl1"]
-[ext_resource type="Texture2D" uid="uid://0opwt6pb0mrc" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/dungeonDecoration_0.png" id="9_n52og"]
+[ext_resource type="Texture2D" uid="uid://m4m6c2orqs1y" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0048.png" id="1_fqhll"]
+[ext_resource type="Texture2D" uid="uid://cuno783hxejjv" path="res://assets/imports/kenney_roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_transparent.png" id="2_p3oey"]
+[ext_resource type="Texture2D" uid="uid://d2d7fi8uxluj3" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0000.png" id="3_58xtl"]
+[ext_resource type="Texture2D" uid="uid://wcrcjs4o7ude" path="res://assets/imports/kenney_tiny-dungeon/Tilemap/tilemap.png" id="3_oxcb8"]
+[ext_resource type="Texture2D" uid="uid://d1kwvs78grei8" path="res://assets/imports/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="4_cf7aa"]
+[ext_resource type="Texture2D" uid="uid://dpq72p1gxj1s1" path="res://assets/imports/kenney_roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_magenta.png" id="5_7kks3"]
+[ext_resource type="Texture2D" uid="uid://v6wkjqiatb14" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/dungeonDecoration_1.png" id="6_4tl1j"]
+[ext_resource type="Texture2D" uid="uid://efglwei0wsu5" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/traps_.png" id="7_fvgqb"]
+[ext_resource type="Texture2D" uid="uid://d3cx8ye7p46qm" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/dungeonDecoration_0 [redCarpet].png" id="8_nudl1"]
+[ext_resource type="Texture2D" uid="uid://bjllru23ufqnb" path="res://assets/imports/dungeon_ v1.0/dungeon_ v1.0/dungeonDecoration_0.png" id="9_n52og"]
 [ext_resource type="PackedScene" uid="uid://bul3dpaqe4rvh" path="res://prefabs/player.tscn" id="10_qdlth"]
-[ext_resource type="Texture2D" uid="uid://buva0r706uj8i" path="res://assets/images/ilustracao-de-pixel-art-caneta-de-pena-caneta-de-pena-pixelizada-icone-de-caneta-de-pena-de-pena-magica-pixelizada_1038602-627.png" id="11_6laby"]
-[ext_resource type="Texture2D" uid="uid://0mliuxhf15nv" path="res://assets/images/images.png" id="12_d5kyi"]
-[ext_resource type="Texture2D" uid="uid://ceiit5a0tmi40" path="res://assets/images/png-transparent-white-skull-illustration-8-bit-color-skull-pixel-art-skull-angle-white-text-thumbnail.png" id="13_jjxoy"]
+[ext_resource type="Texture2D" uid="uid://cmff8d54547rj" path="res://assets/images/ilustracao-de-pixel-art-caneta-de-pena-caneta-de-pena-pixelizada-icone-de-caneta-de-pena-de-pena-magica-pixelizada_1038602-627.png" id="11_6laby"]
+[ext_resource type="Texture2D" uid="uid://c18qrpi32mnmf" path="res://assets/images/images.png" id="12_d5kyi"]
+[ext_resource type="Texture2D" uid="uid://b8mjbs70iqwrd" path="res://assets/images/png-transparent-white-skull-illustration-8-bit-color-skull-pixel-art-skull-angle-white-text-thumbnail.png" id="13_jjxoy"]
 [ext_resource type="PackedScene" uid="uid://d2l48cg2ky3ar" path="res://prefabs/AreaPorta.tscn" id="14_0yynt"]
+[ext_resource type="AudioStream" uid="uid://cjjs35tc2tphg" path="res://assets/musica/cave-temple-atmo-orchestral-drone-thriller-9357.mp3" id="17_fh73a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cl8eq"]
 texture = ExtResource("2_p3oey")
@@ -1584,12 +1586,23 @@ size = Vector2(47, 48)
 script = ExtResource("1_cexb7")
 
 [node name="Player" parent="." instance=ExtResource("10_qdlth")]
-position = Vector2(79, 453)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+position = Vector2(17, 32)
+color = Color(0, 0, 0, 1)
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(396.5, 252.5)
+scale = Vector2(3.31563, 4.43125)
+texture = ExtResource("3_58xtl")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 160)
 metadata/_edit_lock_ = true
 
 [node name="Background1" type="Sprite2D" parent="."]
-position = Vector2(399, 253)
-scale = Vector2(2.55313, 3.19375)
+position = Vector2(407, 255.5)
+scale = Vector2(2.4875, 3.14375)
 texture = ExtResource("1_fqhll")
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 160)
@@ -1606,7 +1619,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2(8.5, 255)
+position = Vector2(206, 441)
 shape = SubResource("RectangleShape2D_w1hu4")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
@@ -1707,15 +1720,7 @@ position = Vector2(31, 469)
 position = Vector2(146, 444)
 tipo_porta = "Pena"
 
-[connection signal="quitGameSignal" from="Player" to="." method="quit"]
-[connection signal="restartGameSignal" from="Player" to="." method="new_game"]
-[connection signal="body_entered" from="TotemPergaminho" to="Player" method="_on_totem_pergaminho_body_entered"]
-[connection signal="body_exited" from="TotemPergaminho" to="Player" method="_on_totem_pergaminho_body_exited"]
-[connection signal="emit_body_entered" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_entered"]
-[connection signal="emit_body_exited" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_exited"]
-[connection signal="emit_body_entered" from="AreaPorta2" to="Player" method="_on_area_porta_emit_body_entered"]
-[connection signal="emit_body_exited" from="AreaPorta2" to="Player" method="_on_area_porta_emit_body_exited"]
-[connection signal="emit_body_entered" from="AreaPorta3" to="Player" method="_on_area_porta_emit_body_entered"]
-[connection signal="emit_body_exited" from="AreaPorta3" to="Player" method="_on_area_porta_emit_body_exited"]
-[connection signal="emit_body_entered" from="AreaPorta4" to="Player" method="_on_area_porta_emit_body_entered"]
-[connection signal="emit_body_exited" from="AreaPorta4" to="Player" method="_on_area_porta_emit_body_exited"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(505, 263)
+stream = ExtResource("17_fh73a")
+autoplay = true
