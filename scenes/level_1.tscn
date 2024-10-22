@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dyvn1g3iiqrql"]
+[gd_scene load_steps=40 format=3 uid="uid://dyvn1g3iiqrql"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_cexb7"]
 [ext_resource type="Texture2D" uid="uid://m4m6c2orqs1y" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0048.png" id="1_fqhll"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b8mjbs70iqwrd" path="res://assets/images/png-transparent-white-skull-illustration-8-bit-color-skull-pixel-art-skull-angle-white-text-thumbnail.png" id="13_jjxoy"]
 [ext_resource type="PackedScene" uid="uid://d2l48cg2ky3ar" path="res://prefabs/AreaPorta.tscn" id="14_0yynt"]
 [ext_resource type="AudioStream" uid="uid://cjjs35tc2tphg" path="res://assets/musica/cave-temple-atmo-orchestral-drone-thriller-9357.mp3" id="17_fh73a"]
+[ext_resource type="PackedScene" uid="uid://bfu2eyy57tluk" path="res://prefabs/Tocha.tscn" id="18_rtk40"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cl8eq"]
 texture = ExtResource("2_p3oey")
@@ -1588,7 +1589,6 @@ script = ExtResource("1_cexb7")
 [node name="Player" parent="." instance=ExtResource("10_qdlth")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2(17, 32)
 color = Color(0, 0, 0, 1)
 
@@ -1616,10 +1616,9 @@ layer_0/tile_data = PackedInt32Array(1900542, 589828, 1610612740, 1966078, 52429
 metadata/_edit_lock_ = true
 
 [node name="Walls" type="StaticBody2D" parent="." groups=["Paredes"]]
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2(206, 441)
+position = Vector2(7, 256)
 shape = SubResource("RectangleShape2D_w1hu4")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
@@ -1724,3 +1723,42 @@ tipo_porta = "Pena"
 position = Vector2(505, 263)
 stream = ExtResource("17_fh73a")
 autoplay = true
+
+[node name="Tocha" parent="." instance=ExtResource("18_rtk40")]
+position = Vector2(60, 276)
+
+[node name="Tocha2" parent="." instance=ExtResource("18_rtk40")]
+position = Vector2(485, 388)
+
+[node name="Tocha3" parent="." instance=ExtResource("18_rtk40")]
+position = Vector2(380, 387)
+
+[node name="Tocha4" parent="." instance=ExtResource("18_rtk40")]
+position = Vector2(468, 244)
+
+[node name="Tocha5" parent="." instance=ExtResource("18_rtk40")]
+position = Vector2(727, 197)
+
+[node name="Tocha6" parent="." instance=ExtResource("18_rtk40")]
+position = Vector2(725, 355)
+
+[node name="Tocha7" parent="." instance=ExtResource("18_rtk40")]
+position = Vector2(39, 32)
+
+[node name="Tocha8" parent="." instance=ExtResource("18_rtk40")]
+position = Vector2(362, 35)
+
+[node name="Tocha9" parent="." instance=ExtResource("18_rtk40")]
+position = Vector2(549, 35)
+
+[connection signal="startPosition" from="Player" to="." method="_on_player_start_position"]
+[connection signal="body_entered" from="TotemPergaminho" to="Player" method="_on_totem_pergaminho_body_entered"]
+[connection signal="body_exited" from="TotemPergaminho" to="Player" method="_on_totem_pergaminho_body_exited"]
+[connection signal="emit_body_entered" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_entered"]
+[connection signal="emit_body_exited" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_exited"]
+[connection signal="emit_body_entered" from="AreaPorta2" to="Player" method="_on_area_porta_emit_body_entered"]
+[connection signal="emit_body_exited" from="AreaPorta2" to="Player" method="_on_area_porta_emit_body_exited"]
+[connection signal="emit_body_entered" from="AreaPorta3" to="Player" method="_on_area_porta_emit_body_entered"]
+[connection signal="emit_body_exited" from="AreaPorta3" to="Player" method="_on_area_porta_emit_body_exited"]
+[connection signal="emit_body_entered" from="AreaPorta4" to="Player" method="_on_area_porta_emit_body_entered"]
+[connection signal="emit_body_exited" from="AreaPorta4" to="Player" method="_on_area_porta_emit_body_exited"]
