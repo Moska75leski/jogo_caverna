@@ -14,3 +14,11 @@ func new_game():
 func quit():
 	print("Sair")
 	get_tree().quit()
+
+
+func _on_player_start_position() -> void:
+	$Player.start($StartPosition.position)
+
+
+func _on_area_porta_emit_body_entered() -> void:
+	pass # Replace with function body.

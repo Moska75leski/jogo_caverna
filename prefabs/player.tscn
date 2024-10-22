@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cvy1r2blwbyah" path="res://assets/imports/mystic_woods_free_2.2/sprites/characters/player.png" id="1_j82yu"]
 [ext_resource type="PackedScene" uid="uid://doklc3x4uejum" path="res://prefabs/Hud.tscn" id="3_xvkfw"]
 
-[sub_resource type="Gradient" id="Gradient_si8ly"]
+[sub_resource type="Gradient" id="Gradient_qpmor"]
 offsets = PackedFloat32Array(0, 0.00649351, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_cydtk"]
-gradient = SubResource("Gradient_si8ly")
+gradient = SubResource("Gradient_qpmor")
 fill = 1
 fill_from = Vector2(0.495413, 0.490826)
 fill_to = Vector2(0.889908, 0.123853)
@@ -438,11 +438,10 @@ sprite_frames = SubResource("SpriteFrames_nqqer")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(25, 34)
+position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_hohuv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
 zoom = Vector2(3, 3)
 
 [node name="Hud" parent="." instance=ExtResource("3_xvkfw")]
