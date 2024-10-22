@@ -3,6 +3,8 @@ extends CharacterBody2D
 signal quitGameSignal
 signal restartGameSignal
 
+signal startPosition
+
 @export var speed = 30
 var screen_size
 
@@ -18,20 +20,21 @@ var dead = false
 var tipo_porta = ""
 
 func _ready() -> void:
-	#$InfoPress.visible = false
-	#$Information.visible = false
+	$Hud/InfoPress.visible = false
+	$Hud/Information.visible = false
+	startPosition.emit()
 	screen_size = get_viewport_rect().size
 
 func _process(delta: float) -> void:
 	velocity = Vector2.ZERO
 		
-	if Input.is_action_pressed("move_right") and not $Information.visible and not dead:
+	if Input.is_action_pressed("move_right") and not $Hud/Information.visible and not dead:
 		velocity.x += 1
-	if Input.is_action_pressed("move_left") and not $Information.visible and not dead:
+	if Input.is_action_pressed("move_left") and not $Hud/Information.visible and not dead:
 		velocity.x -= 1
-	if Input.is_action_pressed("move_down") and not $Information.visible and not dead:
+	if Input.is_action_pressed("move_down") and not $Hud/Information.visible and not dead:
 		velocity.y += 1
-	if Input.is_action_pressed("move_up") and not $Information.visible and not dead:
+	if Input.is_action_pressed("move_up") and not $Hud/Information.visible and not dead:
 		velocity.y -= 1
 
 	if velocity.length() > 0 and not attacking and not dead:
@@ -91,30 +94,30 @@ func _process(delta: float) -> void:
 			$AnimatedSprite2D.stop()
 	
 	if interacting and Input.is_action_just_pressed("action_e"):
-		$Information.visible = true
-		$InfoPress.visible = false
+		$Hud/Information.visible = true
+		$Hud/InfoPress.visible = false
 
 func _on_totem_pergaminho_body_entered(body: Node2D) -> void:
 	if body == self:
 		interacting = true
-		$Information/Label.text = "Onde o peso da alma não se abate, o caminho será seguro e sem derrota."
-		$Information/Button.text = "Fechar"
-		if not $Information/Button.is_connected("pressed", _on_button_pressed):
-			$Information/Button.connect("pressed", _on_button_pressed)
-		$InfoPress.visible = true
+		$Hud/Information/VBoxContainer/Label.text = "Onde o peso da alma não se abate, o caminho será seguro e sem derrota."
+		$Hud/Information/VBoxContainer/Button.text = "Fechar"
+		if not $Hud/Information/VBoxContainer/Button.is_connected("pressed", _on_button_pressed):
+			$Hud/Information/VBoxContainer/Button.connect("pressed", _on_button_pressed)
+		$Hud/InfoPress.visible = true
 
 
 func _on_totem_pergaminho_body_exited(body: Node2D) -> void:
 	if body == self:
 		interacting = false
-		$InfoPress.visible = false
-		$Information.visible = false
-		if $Information/Button.is_connected("pressed", _on_button_pressed):
-			$Information/Button.disconnect("pressed", _on_button_pressed)
+		$Hud/InfoPress.visible = false
+		$Hud/Information.visible = false
+		if $Hud/Information/VBoxContainer/Button.is_connected("pressed", _on_button_pressed):
+			$Hud/Information/VBoxContainer/Button.disconnect("pressed", _on_button_pressed)
 
 
 func _on_button_pressed() -> void:
-	$Information.visible = false
+	$Hud/Information.visible = false
 
 func _on_button_pressed_open_door() -> void:
 	var current_name_scene = get_tree().current_scene.name
@@ -133,26 +136,26 @@ func _on_button_pressed_open_door() -> void:
 	else:
 		dead = true
 		interacting = false
-		$Information.visible = false
-		$InfoPress.visible = false
+		$Hud/Information.visible = false
+		$Hud/InfoPress.visible = false
 		print("Morreu")
 
 func _on_area_porta_emit_body_entered(tipo_porta_func) -> void:
 	tipo_porta = tipo_porta_func
 	interacting = true
-	$Information/Label.text = "Deseja abrir a porta e enfrentar as consequências ?"
-	$Information/Button.text = "Abrir"
-	if not $Information/Button.is_connected("pressed", _on_button_pressed_open_door):
-		$Information/Button.connect("pressed", _on_button_pressed_open_door)
-	$InfoPress.visible = true
+	$Hud/Information/VBoxContainer/Label.text = "Deseja abrir a porta e enfrentar as consequências ?"
+	$Hud/Information/VBoxContainer/Button.text = "Abrir"
+	if not $Hud/Information/VBoxContainer/Button.is_connected("pressed", _on_button_pressed_open_door):
+		$Hud/Information/VBoxContainer/Button.connect("pressed", _on_button_pressed_open_door)
+	$Hud/InfoPress.visible = true
 
 
 func _on_area_porta_emit_body_exited() -> void:
 	interacting = false
-	$InfoPress.visible = false
-	$Information.visible = false
-	if $Information/Button.is_connected("pressed", _on_button_pressed_open_door):
-		$Information/Button.disconnect("pressed", _on_button_pressed_open_door)
+	$Hud/InfoPress.visible = false
+	$Hud/Information.visible = false
+	if $Hud/Information/VBoxContainer/Button.is_connected("pressed", _on_button_pressed_open_door):
+		$Hud/Information/VBoxContainer/Button.disconnect("pressed", _on_button_pressed_open_door)
 	
 func _on_AnimatedSprite2D_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "dead":
