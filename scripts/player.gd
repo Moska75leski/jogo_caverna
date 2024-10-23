@@ -162,7 +162,7 @@ func _on_AnimatedSprite2D_animation_finished() -> void:
 		_on_player_dead()
 
 func _on_player_dead() -> void:
-	$ScreenDead.visible = true
+	$Hud/ScreenDead.visible = true
 
 func start(pos):
 	position = pos
