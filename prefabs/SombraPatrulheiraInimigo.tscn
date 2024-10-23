@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://dd6y32st177pb"]
+
+[ext_resource type="Script" path="res://scripts/sombraPatrulheiraInimigo.gd" id="1_8pgus"]
+[ext_resource type="Texture2D" uid="uid://gwckkctci4ku" path="res://assets/imports/Monster Creature Pack/wraith.png" id="1_xeb6x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vhrhb"]
+radius = 5.0
+height = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guigi"]
+atlas = ExtResource("1_xeb6x")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3m1i"]
+atlas = ExtResource("1_xeb6x")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc1au"]
+atlas = ExtResource("1_xeb6x")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mucpt"]
+atlas = ExtResource("1_xeb6x")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ityb8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_guigi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3m1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc1au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mucpt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="SombraPatrulheiraInimigo" type="CharacterBody2D"]
+position = Vector2(1, 0)
+scale = Vector2(1.4, 1.4)
+script = ExtResource("1_8pgus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_vhrhb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ityb8")
+autoplay = "default"
+frame_progress = 0.734675
+
+[node name="RayCast2D" type="RayCast2D" parent="."]

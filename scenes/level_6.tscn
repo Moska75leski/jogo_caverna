@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://bbu2kwism1yvj"]
+[gd_scene load_steps=26 format=3 uid="uid://bbu2kwism1yvj"]
 
 [ext_resource type="Texture2D" uid="uid://m4m6c2orqs1y" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0048.png" id="1_lro2y"]
+[ext_resource type="Texture2D" uid="uid://d2d7fi8uxluj3" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0000.png" id="2_hvrlv"]
 [ext_resource type="Texture2D" uid="uid://cuno783hxejjv" path="res://assets/imports/kenney_roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_transparent.png" id="2_ihn6y"]
 [ext_resource type="Texture2D" uid="uid://wcrcjs4o7ude" path="res://assets/imports/kenney_tiny-dungeon/Tilemap/tilemap.png" id="3_gehq8"]
 [ext_resource type="Texture2D" uid="uid://d1kwvs78grei8" path="res://assets/imports/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="4_ifsv1"]
@@ -1541,18 +1542,33 @@ sources/8 = SubResource("TileSetAtlasSource_htge0")
 sources/9 = SubResource("TileSetAtlasSource_axysh")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jq2mc"]
-size = Vector2(51, 368)
+size = Vector2(75, 338)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5aebv"]
-size = Vector2(819, 73)
+size = Vector2(819, 97)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rm7o"]
-size = Vector2(88, 369)
+size = Vector2(111, 339)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u37ut"]
-size = Vector2(820, 69)
+size = Vector2(820, 76)
 
 [node name="Level6" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("10_e51od")]
+position = Vector2(390, 100)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(17, 32)
+color = Color(0, 0, 0, 1)
+
+[node name="Background4" type="Sprite2D" parent="."]
+position = Vector2(396.5, 252.5)
+scale = Vector2(3.31563, 4.43125)
+texture = ExtResource("2_hvrlv")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 160)
+metadata/_edit_lock_ = true
 
 [node name="Background6" type="Sprite2D" parent="."]
 position = Vector2(0, 0.0231014)
@@ -1569,9 +1585,6 @@ layer_0/tile_data = PackedInt32Array(196608, 65538, 1, 262144, 65538, 1, 327680,
 layer_1/name = "Layer1"
 layer_1/tile_data = PackedInt32Array(196631, 458756, 4, 262167, 458756, 5, 327703, 458756, 6, 196632, 524292, 4, 262168, 524292, 5, 327704, 524292, 6, 196633, 589828, 4, 262169, 589828, 5, 327705, 589828, 6)
 
-[node name="Player" parent="." instance=ExtResource("10_e51od")]
-position = Vector2(390, 100)
-
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(615, 247)
 
@@ -1579,19 +1592,19 @@ position = Vector2(615, 247)
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2(25.5, 258)
+position = Vector2(37.5, 266)
 shape = SubResource("RectangleShape2D_jq2mc")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
-position = Vector2(409.5, 36.5)
+position = Vector2(409.5, 48.5)
 shape = SubResource("RectangleShape2D_5aebv")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
-position = Vector2(775, 256.5)
+position = Vector2(763.5, 265.5)
 shape = SubResource("RectangleShape2D_1rm7o")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
-position = Vector2(409, 476.5)
+position = Vector2(409, 473)
 shape = SubResource("RectangleShape2D_u37ut")
 
 [node name="DemonioLabirinto" parent="." instance=ExtResource("12_j173j")]
