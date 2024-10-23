@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://dd5odnl7fykqv"]
+[gd_scene load_steps=30 format=3 uid="uid://dd5odnl7fykqv"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_0jlwi"]
 [ext_resource type="Texture2D" uid="uid://m4m6c2orqs1y" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0048.png" id="1_uscct"]
 [ext_resource type="Texture2D" uid="uid://cuno783hxejjv" path="res://assets/imports/kenney_roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_transparent.png" id="2_fj4pr"]
+[ext_resource type="Texture2D" uid="uid://d2d7fi8uxluj3" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0000.png" id="3_0ch2j"]
 [ext_resource type="Texture2D" uid="uid://wcrcjs4o7ude" path="res://assets/imports/kenney_tiny-dungeon/Tilemap/tilemap.png" id="3_ckbjr"]
 [ext_resource type="Texture2D" uid="uid://d1kwvs78grei8" path="res://assets/imports/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="4_5u5op"]
 [ext_resource type="Texture2D" uid="uid://dpq72p1gxj1s1" path="res://assets/imports/kenney_roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_magenta.png" id="5_022vh"]
@@ -1567,6 +1568,18 @@ script = ExtResource("1_0jlwi")
 
 [node name="Player" parent="." instance=ExtResource("11_b8021")]
 position = Vector2(786, 466)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(17, 32)
+color = Color(0, 0, 0, 1)
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(396.5, 252.5)
+scale = Vector2(3.31563, 4.43125)
+texture = ExtResource("3_0ch2j")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 160)
+metadata/_edit_lock_ = true
 
 [node name="Background2" type="Sprite2D" parent="."]
 position = Vector2(114, 405)
