@@ -3,10 +3,12 @@ extends CharacterBody2D
 @export var speed = 10
 @export var detection_range = 100  # Alcance para detectar o jogador
 @export var patrol_points = []  # Lista de vetores para os pontos de patrulha
+@export var damage = 10
 
 var player = null
 var current_patrol_index = 0
 var is_chasing_player = false
+var is_collision_player = false
 
 func _ready() -> void:
 	$RayCast2D.enabled = true
@@ -17,11 +19,25 @@ func _process(delta: float) -> void:
 		seek_player(delta)
 	else:
 		patrol(delta)
-
+	
 	update_animation()
 	check_for_player()
 	update_raycast_direction()
 
+func _on_body_entered(body):
+	if body == player:
+		is_collision_player = true
+		$DamageTimer.start()
+
+func _on_body_exited(body):
+	if body == player:
+		is_collision_player = false
+		$DamageTimer.stop()
+
+func _on_damage_timer_timeout() -> void:
+	if is_collision_player:
+		Global.life -= damage
+	
 func update_animation() -> void:
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
