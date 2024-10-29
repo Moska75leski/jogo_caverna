@@ -27,6 +27,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	velocity = Vector2.ZERO
+	
+	$Hud/BoxLife/VBoxContainer/LabelLife.text = "Vida: " + str(Global.life)
 		
 	if Input.is_action_pressed("move_right") and not $Hud/Information.visible and not dead:
 		velocity.x += 1

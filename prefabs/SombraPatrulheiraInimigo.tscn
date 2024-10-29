@@ -180,7 +180,12 @@ position = Vector2(1, 0)
 scale = Vector2(1.4, 1.4)
 script = ExtResource("1_8pgus")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 1)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_vhrhb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -188,3 +193,9 @@ sprite_frames = SubResource("SpriteFrames_ityb8")
 animation = &"walk_right"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="DamageTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
