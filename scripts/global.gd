@@ -7,7 +7,10 @@ var regen_interval = 2.0 # intervalo de tempo entre regenerações em segundos
 var regen_timer = 0.0
 
 func _process(delta: float) -> void:
-	tick_life_restart(delta)
+	if life > 0:
+		tick_life_restart(delta)
+	else:
+		life = 0
 
 func tick_life_restart(delta: float) -> void:
 	if life < max_life:

@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://doklc3x4uejum"]
+[gd_scene load_steps=2 format=3 uid="uid://doklc3x4uejum"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_a0nuq"]
 
 [node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_a0nuq")
 
 [node name="Information" type="Panel" parent="."]
 visible = false
@@ -160,3 +163,6 @@ layout_mode = 2
 text = "Vida: 100"
 vertical_alignment = 1
 autowrap_mode = 2
+
+[connection signal="pressed" from="ScreenDead/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="ScreenDead/VBoxContainer/quit" to="." method="_on_quit_pressed"]

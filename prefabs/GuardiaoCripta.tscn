@@ -1,8 +1,8 @@
 [gd_scene load_steps=66 format=3 uid="uid://c7icfpm0q6qeu"]
 
-[ext_resource type="Texture2D" uid="uid://cvy1r2blwbyah" path="res://assets/imports/mystic_woods_free_2.2/sprites/characters/player.png" id="1_r1hu6"]
-[ext_resource type="Texture2D" uid="uid://bs6jn0nkqqpe8" path="res://assets/imports/Undead executioner/Undead executioner puppet/png/attacking.png" id="2_xgyju"]
-[ext_resource type="Texture2D" uid="uid://cyucyijvdw2r2" path="res://assets/imports/Undead executioner/Undead executioner puppet/png/idle2.png" id="2_ydknk"]
+[ext_resource type="Texture2D" uid="uid://cslkl1vj8ar6y" path="res://assets/imports/mystic_woods_free_2.2/sprites/characters/player.png" id="1_r1hu6"]
+[ext_resource type="Texture2D" uid="uid://cfxutpxrqvr8p" path="res://assets/imports/Undead executioner/Undead executioner puppet/png/attacking.png" id="2_xgyju"]
+[ext_resource type="Texture2D" uid="uid://d0c0emaorrfdb" path="res://assets/imports/Undead executioner/Undead executioner puppet/png/idle2.png" id="2_ydknk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sd5g5"]
 atlas = ExtResource("1_r1hu6")
