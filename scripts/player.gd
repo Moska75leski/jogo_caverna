@@ -19,6 +19,9 @@ var dead = false
 
 var tipo_porta = ""
 
+@export var attack_damage = 20
+var current_enemy = null
+
 func _ready() -> void:
 	$Hud/InfoPress.visible = false
 	$Hud/Information.visible = false
@@ -29,6 +32,13 @@ func _process(delta: float) -> void:
 	velocity = Vector2.ZERO
 	
 	$Hud/BoxLife/VBoxContainer/LabelLife.text = "Vida: " + str(Global.life)
+	
+	if Global.life <= 0:
+		dead = true
+		interacting = false
+		attacking = false
+		$Hud/Information.visible = false
+		$Hud/InfoPress.visible = false
 		
 	if Input.is_action_pressed("move_right") and not $Hud/Information.visible and not dead:
 		velocity.x += 1
@@ -88,6 +98,10 @@ func _process(delta: float) -> void:
 		else:
 			$AnimatedSprite2D.animation = "attack_down"
 		$AnimatedSprite2D.play()
+		
+		if current_enemy and current_enemy.has_method("take_damage"):
+			var attack_direction = (current_enemy.global_position - global_position).normalized()
+			current_enemy.take_damage(attack_damage, attack_direction)
 
 	if attacking:
 		attack_timer -= delta
@@ -138,6 +152,7 @@ func _on_button_pressed_open_door() -> void:
 	else:
 		dead = true
 		interacting = false
+		attacking = false
 		$Hud/Information.visible = false
 		$Hud/InfoPress.visible = false
 		print("Morreu")
@@ -176,3 +191,17 @@ func quitGame() -> void:
 
 func restartGame() -> void:
 	quitGameSignal.emit()
+
+
+func _on_area_2d_body_entered(body) -> void:
+	if body.is_in_group("inimigo"):
+		current_enemy = body
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body == current_enemy:
+		current_enemy = null
+
+func attack():
+	if current_enemy and current_enemy.has_method("take_damage"):
+		current_enemy.take_damage(attack_damage)

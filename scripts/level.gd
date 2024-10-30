@@ -6,10 +6,12 @@ func _ready() -> void:
 
 func new_game():
 	get_tree().change_scene_to_file("res://levels/level1.tscn")
+	get_tree().reload_current_scene()
 	print("Recomeçar")
 	$Player.dead = false
 	$Player.start($StartPosition.position)
-	$Player/ScreenDead.visible = false
+	$Player/Hud/ScreenDead.visible = false
+	Global.life = 100
 
 func quit():
 	print("Sair")
