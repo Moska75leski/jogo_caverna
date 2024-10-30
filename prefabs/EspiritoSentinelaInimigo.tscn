@@ -1,11 +1,45 @@
-[gd_scene load_steps=25 format=3 uid="uid://cpkilvbw1quc1"]
+[gd_scene load_steps=34 format=3 uid="uid://cpkilvbw1quc1"]
 
 [ext_resource type="Script" path="res://scripts/sombraPatrulheiraInimigo.gd" id="1_cjl31"]
-[ext_resource type="Texture2D" uid="uid://pbbsqjl88vst" path="res://assets/imports/Monster Creature Pack/mummy.png" id="2_cw1id"]
+[ext_resource type="Texture2D" uid="uid://4sygvojysvih" path="res://assets/imports/Monster Creature Pack/mummy.png" id="2_cw1id"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_74a7l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vhrhb"]
 radius = 5.0
 height = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3s6k5"]
+atlas = ExtResource("2_cw1id")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ahq"]
+atlas = ExtResource("2_cw1id")
+region = Rect2(16, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r7wb"]
+atlas = ExtResource("2_cw1id")
+region = Rect2(32, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wb8ty"]
+atlas = ExtResource("2_cw1id")
+region = Rect2(48, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sji0k"]
+atlas = ExtResource("2_cw1id")
+region = Rect2(0, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gfoo"]
+atlas = ExtResource("2_cw1id")
+region = Rect2(16, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn2mq"]
+atlas = ExtResource("2_cw1id")
+region = Rect2(32, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmyni"]
+atlas = ExtResource("2_cw1id")
+region = Rect2(48, 208, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b757b"]
 atlas = ExtResource("2_cw1id")
@@ -91,6 +125,40 @@ region = Rect2(48, 112, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_3s6k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0ahq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7r7wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wb8ty")
+}],
+"loop": true,
+"name": &"atack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sji0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gfoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bn2mq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmyni")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_b757b")
 }, {
 "duration": 1.0,
@@ -104,7 +172,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 7.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -175,17 +243,30 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="EspiritoSentinelainimigo" type="CharacterBody2D"]
+[node name="EspiritoSentinelainimigo" type="CharacterBody2D" groups=["inimigo"]]
 position = Vector2(1, 0)
 scale = Vector2(1.4, 1.4)
 script = ExtResource("1_cjl31")
+patrol_points = [Vector2(0, 0)]
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_74a7l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_vhrhb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ityb8")
-animation = &"walk_up"
-frame_progress = 0.367803
+animation = &"death"
+frame_progress = 0.083466
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="DamageTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
