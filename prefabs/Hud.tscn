@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://doklc3x4uejum"]
+[gd_scene load_steps=3 format=3 uid="uid://doklc3x4uejum"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_a0nuq"]
+[ext_resource type="Texture2D" uid="uid://bewa5u0tgx2eu" path="res://assets/images/10463909-pixel-old-key-for-games-gratis-vetor.png" id="2_4mavu"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_a0nuq")
@@ -163,6 +164,26 @@ layout_mode = 2
 text = "Vida: 100"
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="BoxKey" type="Panel" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 112.0
+offset_right = 229.0
+offset_bottom = 54.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxKey"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="BoxKey/VBoxContainer"]
+position = Vector2(29, 33)
+scale = Vector2(0.0381356, 0.0381356)
+texture = ExtResource("2_4mavu")
 
 [connection signal="pressed" from="ScreenDead/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="ScreenDead/VBoxContainer/quit" to="." method="_on_quit_pressed"]

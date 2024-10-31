@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq0fnpoj71c7u"]
+
+[ext_resource type="Script" path="res://scripts/BauChave.gd" id="1_hsxdu"]
+[ext_resource type="Texture2D" uid="uid://bewa5u0tgx2eu" path="res://assets/images/10463909-pixel-old-key-for-games-gratis-vetor.png" id="1_y1t2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtilt"]
+size = Vector2(15, 7.5)
+
+[node name="Chave" type="Area2D"]
+script = ExtResource("1_hsxdu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mtilt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(0.0124765, 0.0124765)
+texture = ExtResource("1_y1t2f")

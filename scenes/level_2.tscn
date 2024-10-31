@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dd5odnl7fykqv"]
+[gd_scene load_steps=34 format=3 uid="uid://dd5odnl7fykqv"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_0jlwi"]
 [ext_resource type="Texture2D" uid="uid://noa58qyutsbv" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0048.png" id="1_uscct"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bcs61yt2whv0u" path="res://prefabs/VermeCinzaInimigo.tscn" id="14_mhvkl"]
 [ext_resource type="PackedScene" uid="uid://dd6y32st177pb" path="res://prefabs/SombraPatrulheiraInimigo.tscn" id="15_l6gtv"]
 [ext_resource type="PackedScene" uid="uid://cpkilvbw1quc1" path="res://prefabs/EspiritoSentinelaInimigo.tscn" id="16_7sxyd"]
+[ext_resource type="PackedScene" uid="uid://bfu2eyy57tluk" path="res://prefabs/Tocha.tscn" id="17_3eyqd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbnrm"]
 texture = ExtResource("2_fj4pr")
@@ -1573,7 +1574,6 @@ script = ExtResource("1_0jlwi")
 position = Vector2(786, 466)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2(17, 32)
 color = Color(0, 0, 0, 1)
 
@@ -1719,6 +1719,30 @@ patrol_points = [Vector2(165, 400), Vector2(165, 480), Vector2(310, 485)]
 position = Vector2(76, 74)
 speed = 15
 patrol_points = [Vector2(90, 50), Vector2(75, 140)]
+
+[node name="Tocha" parent="." instance=ExtResource("17_3eyqd")]
+position = Vector2(643, 330)
+
+[node name="Tocha2" parent="." instance=ExtResource("17_3eyqd")]
+position = Vector2(735, 138)
+
+[node name="Tocha3" parent="." instance=ExtResource("17_3eyqd")]
+position = Vector2(487, 441)
+
+[node name="Tocha4" parent="." instance=ExtResource("17_3eyqd")]
+position = Vector2(515, 138)
+
+[node name="Tocha5" parent="." instance=ExtResource("17_3eyqd")]
+position = Vector2(378, 149)
+
+[node name="Tocha6" parent="." instance=ExtResource("17_3eyqd")]
+position = Vector2(183, 229)
+
+[node name="Tocha7" parent="." instance=ExtResource("17_3eyqd")]
+position = Vector2(119, 408)
+
+[node name="Tocha8" parent="." instance=ExtResource("17_3eyqd")]
+position = Vector2(95, 22)
 
 [connection signal="emit_body_entered" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_entered"]
 [connection signal="emit_body_exited" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_exited"]
