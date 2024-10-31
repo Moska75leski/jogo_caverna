@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var death_animation_duration = 1
 @export var knockback_distance = 50  # Distância do recuo
 @export var knockback_duration = 0.1
+signal mini_boss_defeated
 
 var life = 100
 var player = null
@@ -134,6 +135,9 @@ func die() -> void:
 	death_timer.connect("timeout", _on_death_animation_complete)
 	add_child(death_timer)
 	death_timer.start()
+	
+	if is_in_group("mini-boss"):
+		emit_signal("mini_boss_defeated")
 
 func _on_death_animation_complete() -> void:
 	queue_free()

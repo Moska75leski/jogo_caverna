@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dyvn1g3iiqrql"]
+[gd_scene load_steps=42 format=3 uid="uid://dyvn1g3iiqrql"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_cexb7"]
 [ext_resource type="Texture2D" uid="uid://noa58qyutsbv" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0048.png" id="1_fqhll"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://0mliuxhf15nv" path="res://assets/images/images.png" id="12_d5kyi"]
 [ext_resource type="Texture2D" uid="uid://ceiit5a0tmi40" path="res://assets/images/png-transparent-white-skull-illustration-8-bit-color-skull-pixel-art-skull-angle-white-text-thumbnail.png" id="13_jjxoy"]
 [ext_resource type="PackedScene" uid="uid://d2l48cg2ky3ar" path="res://prefabs/AreaPorta.tscn" id="14_0yynt"]
-[ext_resource type="AudioStream" uid="uid://ccvn7h64072mj" path="res://assets/musica/cave-temple-atmo-orchestral-drone-thriller-9357.mp3" id="17_fh73a"]
 [ext_resource type="PackedScene" uid="uid://bfu2eyy57tluk" path="res://prefabs/Tocha.tscn" id="18_rtk40"]
 [ext_resource type="PackedScene" uid="uid://dd6y32st177pb" path="res://prefabs/SombraPatrulheiraInimigo.tscn" id="19_upoxu"]
 [ext_resource type="PackedScene" uid="uid://cpkilvbw1quc1" path="res://prefabs/EspiritoSentinelaInimigo.tscn" id="20_wpsd5"]
@@ -1644,7 +1643,6 @@ scale = Vector2(0.0506111, 0.0506111)
 texture = ExtResource("13_jjxoy")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Layout"]
-visible = false
 position = Vector2(17, 32)
 color = Color(0, 0, 0, 1)
 
@@ -1760,12 +1758,6 @@ tipo_porta = "Pena"
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(31, 469)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(505, 263)
-stream = ExtResource("17_fh73a")
-autoplay = true
-max_distance = 50000.0
 
 [node name="SombraPatrulheiraInimigo" parent="." instance=ExtResource("19_upoxu")]
 position = Vector2(49, 77)

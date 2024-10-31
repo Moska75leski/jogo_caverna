@@ -1562,7 +1562,6 @@ script = ExtResource("1_0csis")
 position = Vector2(264, 238)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2(17, 32)
 color = Color(0, 0, 0, 1)
 
@@ -1613,13 +1612,15 @@ shape = SubResource("RectangleShape2D_d7rqh")
 position = Vector2(255.5, 221)
 polygon = PackedVector2Array(0.5, 1, -0.5, -84, 353.5, -85, 355.5, -32, 357.5, 24, 338.5, 25, 340.5, 74, 372.5, 73, 371.5, 155, 389.5, 155, 391.5, -97, -17.5, -97, -18.5, 155, 1.5, 155, -2.5, 57, -12.5, 56, -12.5, -1)
 
-[node name="AreaPorta" parent="." instance=ExtResource("12_tdtnx")]
+[node name="AreaPorta" parent="." groups=["area-porta-mini-boss"] instance=ExtResource("12_tdtnx")]
 position = Vector2(601, 219)
 rotation = 1.5708
 tipo_porta = "Pena"
 
-[node name="GuardiaoCripta" parent="." instance=ExtResource("13_cgnjk")]
+[node name="GuardiaoCripta" parent="." groups=["mini-boss"] instance=ExtResource("13_cgnjk")]
 position = Vector2(449, 232)
+patrol_points = [Vector2(560, 180), Vector2(500, 320), Vector2(400, 185)]
 
 [connection signal="emit_body_entered" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_entered"]
 [connection signal="emit_body_exited" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_exited"]
+[connection signal="mini_boss_defeated" from="GuardiaoCripta" to="." method="_on_mini_boss_defeated"]

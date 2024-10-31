@@ -250,13 +250,11 @@ script = ExtResource("1_n8fbk")
 patrol_points = [Vector2(0, 0)]
 
 [node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_xawk6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_vhrhb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

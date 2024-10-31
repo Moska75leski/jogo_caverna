@@ -259,7 +259,6 @@ shape = SubResource("CapsuleShape2D_vhrhb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_3rw7w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
