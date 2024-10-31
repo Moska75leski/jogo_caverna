@@ -16,6 +16,7 @@ var last_direction = ""
 
 var interacting = false
 var dead = false
+var key = false
 
 var tipo_porta = ""
 
@@ -197,6 +198,10 @@ func _on_area_2d_body_entered(body) -> void:
 	if body.is_in_group("inimigo"):
 		current_enemy = body
 
+func _on_chave_coletada():
+	$Hud/BoxKey.visible = true
+	key = true
+	print("Chave coletada!")
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body == current_enemy:
