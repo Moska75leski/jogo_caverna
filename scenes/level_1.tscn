@@ -1752,10 +1752,6 @@ tipo_porta = "Balança"
 position = Vector2(587, 37)
 tipo_porta = "Caveira"
 
-[node name="AreaPorta4" parent="Collisores" instance=ExtResource("14_0yynt")]
-position = Vector2(146, 444)
-tipo_porta = "Pena"
-
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(31, 469)
 
@@ -1821,5 +1817,3 @@ patrol_points = [Vector2(500, 280), Vector2(500, 340), Vector2(430, 340), Vector
 [connection signal="emit_body_exited" from="Collisores/AreaPorta2" to="Player" method="_on_area_porta_emit_body_exited"]
 [connection signal="emit_body_entered" from="Collisores/AreaPorta3" to="Player" method="_on_area_porta_emit_body_entered"]
 [connection signal="emit_body_exited" from="Collisores/AreaPorta3" to="Player" method="_on_area_porta_emit_body_exited"]
-[connection signal="emit_body_entered" from="Collisores/AreaPorta4" to="Player" method="_on_area_porta_emit_body_entered"]
-[connection signal="emit_body_exited" from="Collisores/AreaPorta4" to="Player" method="_on_area_porta_emit_body_exited"]

@@ -577,7 +577,7 @@ shape = SubResource("CapsuleShape2D_q8pd8")
 position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_txfno")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["inimigo"]]
 sprite_frames = SubResource("SpriteFrames_yqnt8")
 animation = &"atack"
 

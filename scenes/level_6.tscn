@@ -1,5 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://bbu2kwism1yvj"]
+[gd_scene load_steps=27 format=3 uid="uid://bbu2kwism1yvj"]
 
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_buyel"]
 [ext_resource type="Texture2D" uid="uid://noa58qyutsbv" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0048.png" id="1_lro2y"]
 [ext_resource type="Texture2D" uid="uid://bhojjso6q0oet" path="res://assets/imports/kenney_tiny-dungeon/Tiles/tile_0000.png" id="2_hvrlv"]
 [ext_resource type="Texture2D" uid="uid://b4spmphv3rgg4" path="res://assets/imports/kenney_roguelike-caves-dungeons/Spritesheet/roguelikeDungeon_transparent.png" id="2_ihn6y"]
@@ -1554,6 +1555,7 @@ size = Vector2(111, 339)
 size = Vector2(820, 76)
 
 [node name="Level6" type="Node2D"]
+script = ExtResource("1_buyel")
 
 [node name="Player" parent="." instance=ExtResource("10_e51od")]
 position = Vector2(390, 100)
@@ -1586,7 +1588,7 @@ layer_1/name = "Layer1"
 layer_1/tile_data = PackedInt32Array(196631, 458756, 4, 262167, 458756, 5, 327703, 458756, 6, 196632, 524292, 4, 262168, 524292, 5, 327704, 524292, 6, 196633, 589828, 4, 262169, 589828, 5, 327705, 589828, 6)
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(615, 247)
+position = Vector2(392, 119)
 
 [node name="Walls" type="StaticBody2D" parent="." groups=["Paredes"]]
 metadata/_edit_lock_ = true
@@ -1609,3 +1611,13 @@ shape = SubResource("RectangleShape2D_u37ut")
 
 [node name="DemonioLabirinto" parent="." instance=ExtResource("12_j173j")]
 position = Vector2(392, 319)
+speed = 30
+detection_range = 300
+patrol_points = [Vector2(150, 320), Vector2(520, 350), Vector2(620, 185), Vector2(160, 175)]
+damage = 45
+life = 200
+
+[connection signal="quitGameSignal" from="Player" to="." method="quit"]
+[connection signal="restartGameSignal" from="Player" to="." method="new_game"]
+[connection signal="startPosition" from="Player" to="." method="_on_player_start_position"]
+[connection signal="boss_final_defeated" from="DemonioLabirinto" to="." method="_on_demonio_labirinto_boss_final_defeated"]
