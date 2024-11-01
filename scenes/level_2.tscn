@@ -1744,5 +1744,8 @@ position = Vector2(119, 408)
 [node name="Tocha8" parent="." instance=ExtResource("17_3eyqd")]
 position = Vector2(95, 22)
 
+[connection signal="quitGameSignal" from="Player" to="." method="quit"]
+[connection signal="restartGameSignal" from="Player" to="." method="new_game"]
+[connection signal="startPosition" from="Player" to="." method="_on_player_start_position"]
 [connection signal="emit_body_entered" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_entered"]
 [connection signal="emit_body_exited" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_exited"]

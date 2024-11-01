@@ -185,5 +185,102 @@ position = Vector2(29, 33)
 scale = Vector2(0.0381356, 0.0381356)
 texture = ExtResource("2_4mavu")
 
+[node name="ScreenVictory" type="Panel" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -263.0
+offset_top = -204.5
+offset_right = 263.0
+offset_bottom = 204.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ScreenVictory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScreenVictory"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -111.5
+offset_right = 131.0
+offset_bottom = 111.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ScreenVictory/VBoxContainer"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = "Após desbravar as profundezas do desconhecido e enfrentar o limite entre mundos, você conquistou a lendária Pedra Ancestral! Com o poder da imortalidade em suas mãos, o legado do submundo agora faz parte de sua história."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="restart" type="Button" parent="ScreenVictory/VBoxContainer"]
+layout_mode = 2
+text = "Sair"
+metadata/_edit_use_anchors_ = true
+
+[node name="quit" type="Button" parent="ScreenVictory/VBoxContainer"]
+layout_mode = 2
+text = "Recomeçar"
+metadata/_edit_use_anchors_ = true
+
+[node name="BoxInfos" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -80.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxInfos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelLife" type="Label" parent="BoxInfos/VBoxContainer"]
+layout_mode = 2
+text = "Click no botão esquerdo do mouse para bater"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LabelLife2" type="Label" parent="BoxInfos/VBoxContainer"]
+layout_mode = 2
+text = "w,s,d,a para se movimentar"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LabelLife3" type="Label" parent="BoxInfos/VBoxContainer"]
+layout_mode = 2
+text = "Pressione a letra E para ações"
+vertical_alignment = 1
+autowrap_mode = 2
+
 [connection signal="pressed" from="ScreenDead/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="ScreenDead/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ScreenVictory/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="ScreenVictory/VBoxContainer/quit" to="." method="_on_quit_pressed"]

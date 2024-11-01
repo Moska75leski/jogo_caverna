@@ -1697,6 +1697,9 @@ position = Vector2(296, 62)
 [node name="Door" parent="." instance=ExtResource("18_xys7b")]
 position = Vector2(400, 405)
 
+[connection signal="quitGameSignal" from="Player" to="." method="quit"]
+[connection signal="restartGameSignal" from="Player" to="." method="new_game"]
+[connection signal="startPosition" from="Player" to="." method="_on_player_start_position"]
 [connection signal="emit_body_entered" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_entered"]
 [connection signal="emit_body_exited" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_exited"]
 [connection signal="chave_coletada" from="Chave" to="Player" method="_on_chave_coletada"]

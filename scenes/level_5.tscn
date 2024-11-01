@@ -1583,7 +1583,6 @@ script = ExtResource("1_h210y")
 position = Vector2(33, 465)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2(17, 32)
 color = Color(0, 0, 0, 1)
 
@@ -1696,39 +1695,75 @@ tipo_porta = "Pena"
 
 [node name="VermeCinzaInimigo" parent="." instance=ExtResource("14_c6sso")]
 position = Vector2(34, 317)
-
-[node name="SombraPatrulheiraInimigo" parent="." instance=ExtResource("15_8brfm")]
-position = Vector2(175, 403)
-
-[node name="EspiritoSentinelainimigo" parent="." instance=ExtResource("16_mos6y")]
-position = Vector2(209, 128)
-
-[node name="SombraPatrulheiraInimigo2" parent="." instance=ExtResource("15_8brfm")]
-position = Vector2(369, 47)
-
-[node name="VermeCinzaInimigo2" parent="." instance=ExtResource("14_c6sso")]
-position = Vector2(31, 50)
-
-[node name="EspiritoSentinelainimigo2" parent="." instance=ExtResource("16_mos6y")]
-position = Vector2(352, 201)
-
-[node name="SombraPatrulheiraInimigo3" parent="." instance=ExtResource("15_8brfm")]
-position = Vector2(545, 196)
+speed = 25
+patrol_points = [Vector2(350, 320), Vector2(35, 320)]
+damage = 25
 
 [node name="VermeCinzaInimigo3" parent="." instance=ExtResource("14_c6sso")]
 position = Vector2(504, 465)
+speed = 25
+patrol_points = [Vector2(400, 480), Vector2(510, 480)]
+damage = 25
+
+[node name="VermeCinzaInimigo2" parent="." instance=ExtResource("14_c6sso")]
+position = Vector2(31, 50)
+speed = 25
+patrol_points = [Vector2(30, 230), Vector2(30, 50)]
+damage = 25
+
+[node name="SombraPatrulheiraInimigo" parent="." instance=ExtResource("15_8brfm")]
+position = Vector2(175, 403)
+speed = 30
+patrol_points = [Vector2(270, 400), Vector2(270, 315), Vector2(270, 400)]
+damage = 35
 
 [node name="SombraPatrulheiraInimigo4" parent="." instance=ExtResource("15_8brfm")]
 position = Vector2(784, 476)
+speed = 30
+patrol_points = [Vector2(780, 210), Vector2(785, 480)]
+damage = 35
+
+[node name="SombraPatrulheiraInimigo2" parent="." instance=ExtResource("15_8brfm")]
+position = Vector2(369, 47)
+speed = 30
+patrol_points = [Vector2(370, 170), Vector2(365, 50)]
+damage = 35
+
+[node name="SombraPatrulheiraInimigo3" parent="." instance=ExtResource("15_8brfm")]
+position = Vector2(545, 196)
+speed = 30
+patrol_points = [Vector2(540, 450), Vector2(545, 200)]
+damage = 35
+
+[node name="EspiritoSentinelainimigo" parent="." instance=ExtResource("16_mos6y")]
+position = Vector2(209, 128)
+speed = 25
+patrol_points = [Vector2(210, 325), Vector2(210, 130)]
+damage = 40
+
+[node name="EspiritoSentinelainimigo2" parent="." instance=ExtResource("16_mos6y")]
+position = Vector2(352, 201)
+speed = 25
+patrol_points = [Vector2(335, 480), Vector2(360, 200)]
+damage = 40
 
 [node name="EspiritoSentinelainimigo3" parent="." instance=ExtResource("16_mos6y")]
 position = Vector2(688, 298)
+speed = 25
+patrol_points = [Vector2(690, 375), Vector2(540, 375), Vector2(690, 375)]
+damage = 40
 
 [node name="EspiritoSentinelainimigo4" parent="." instance=ExtResource("16_mos6y")]
 position = Vector2(690, 50)
+speed = 25
+patrol_points = [Vector2(690, 195), Vector2(690, 50)]
+damage = 40
 
 [node name="EspiritoSentinelainimigo5" parent="." instance=ExtResource("16_mos6y")]
 position = Vector2(776, 74)
+speed = 25
+patrol_points = [Vector2(760, 190), Vector2(780, 75)]
+damage = 40
 
 [node name="Tocha" parent="." instance=ExtResource("17_fg3g8")]
 position = Vector2(79, 299)
@@ -1760,5 +1795,8 @@ position = Vector2(581, 17)
 [node name="Tocha10" parent="." instance=ExtResource("17_fg3g8")]
 position = Vector2(751, 281)
 
+[connection signal="quitGameSignal" from="Player" to="." method="quit"]
+[connection signal="restartGameSignal" from="Player" to="." method="new_game"]
+[connection signal="startPosition" from="Player" to="." method="_on_player_start_position"]
 [connection signal="emit_body_entered" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_entered"]
 [connection signal="emit_body_exited" from="AreaPorta" to="Player" method="_on_area_porta_emit_body_exited"]
