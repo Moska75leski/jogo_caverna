@@ -7,9 +7,11 @@ extends CharacterBody2D
 @export var death_animation_duration = 1
 @export var knockback_distance = 50  # Distância do recuo
 @export var knockback_duration = 0.1
-signal mini_boss_defeated
+@export var life = 100
 
-var life = 100
+signal mini_boss_defeated
+signal boss_final_defeated
+
 var player = null
 var current_patrol_index = 0
 var is_chasing_player = false
@@ -62,10 +64,10 @@ func update_animation() -> void:
 
 	if velocity.x > 0 and not is_collision_player:
 		$AnimatedSprite2D.animation = "walk_right"
-		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.flip_h = true
 	elif velocity.x < 0 and not is_collision_player:
 		$AnimatedSprite2D.animation = "walk_left"
-		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.flip_h = false
 	elif velocity.y < 0 and not is_collision_player:
 		$AnimatedSprite2D.animation = "walk_up"
 	elif velocity.y > 0 and not is_collision_player:
@@ -138,6 +140,9 @@ func die() -> void:
 	
 	if is_in_group("mini-boss"):
 		emit_signal("mini_boss_defeated")
+		
+	if is_in_group("boss-final"):
+		emit_signal("boss_final_defeated")
 
 func _on_death_animation_complete() -> void:
 	queue_free()
