@@ -25,6 +25,7 @@ var current_enemy = null
 var cura_cooldown = 30
 var tempo_ultima_cura = -cura_cooldown
 
+
 func _ready() -> void:
 	$Hud/InfoPress.visible = false
 	$Hud/Information.visible = false

@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://doklc3x4uejum"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_a0nuq"]
+
 [ext_resource type="Texture2D" uid="uid://cs4drurbkvx5q" path="res://assets/images/10463909-pixel-old-key-for-games-gratis-vetor.png" id="2_4mavu"]
+
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_a0nuq")
@@ -281,11 +283,13 @@ text = "Pressione a letra E para ações"
 vertical_alignment = 1
 autowrap_mode = 2
 
+
 [node name="LabelLife4" type="Label" parent="BoxInfos/VBoxContainer"]
 layout_mode = 2
 text = "Pressione a letra Q para curar"
 vertical_alignment = 1
 autowrap_mode = 2
+
 
 [connection signal="pressed" from="ScreenDead/VBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="ScreenDead/VBoxContainer/quit" to="." method="_on_quit_pressed"]
