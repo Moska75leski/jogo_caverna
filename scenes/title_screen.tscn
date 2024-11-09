@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjfyoaq8fa300"]
 
 [ext_resource type="Script" path="res://scripts/menu_screen.gd" id="1_b02bs"]
-[ext_resource type="Texture2D" uid="uid://cj02todnyconb" path="res://assets/images/title-screen.jpg" id="1_c5oah"]
-[ext_resource type="Texture2D" uid="uid://b8derao0wqc3w" path="res://assets/images/game_logo.png" id="2_ofqgf"]
+[ext_resource type="Texture2D" uid="uid://dmjco3bqxic6j" path="res://assets/images/title-screen.jpg" id="1_c5oah"]
+[ext_resource type="Texture2D" uid="uid://clxobvi5gf8f4" path="res://assets/images/game_logo.png" id="2_ofqgf"]
 
 [sub_resource type="SystemFont" id="SystemFont_ifu3w"]
 font_names = PackedStringArray("Century")
