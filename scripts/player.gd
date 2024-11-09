@@ -22,6 +22,9 @@ var tipo_porta = ""
 
 @export var attack_damage = 20
 var current_enemy = null
+var cura_cooldown = 30
+var tempo_ultima_cura = -cura_cooldown
+
 
 func _ready() -> void:
 	$Hud/InfoPress.visible = false
@@ -113,6 +116,20 @@ func _process(delta: float) -> void:
 	if interacting and Input.is_action_just_pressed("action_e"):
 		$Hud/Information.visible = true
 		$Hud/InfoPress.visible = false
+		
+		
+	if Input.is_action_just_pressed("curar"): 
+		heal()
+
+func heal() -> void:
+	var max_life = 100
+	if Global.life < max_life:
+		print("Curando")
+		Global.life += 20  # Valor da cura, ajuste conforme necessário
+		Global.life = min(Global.life, max_life)  # Garante que a vida não ultrapassa o máximo
+	else:
+		print("Vida cheia ou não é possível curar agora")
+
 
 func _on_totem_pergaminho_body_entered(body: Node2D) -> void:
 	if body == self:
