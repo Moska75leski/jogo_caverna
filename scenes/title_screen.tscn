@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjfyoaq8fa300"]
+[gd_scene load_steps=6 format=3 uid="uid://cjfyoaq8fa300"]
 
-[ext_resource type="Texture2D" uid="uid://cj02todnyconb" path="res://assets/images/title-screen.jpg" id="1_c5oah"]
-[ext_resource type="Texture2D" uid="uid://b8derao0wqc3w" path="res://assets/images/game_logo.png" id="2_ofqgf"]
-
+[ext_resource type="Script" path="res://scripts/menu_screen.gd" id="1_b02bs"]
+[ext_resource type="Texture2D" uid="uid://dmjco3bqxic6j" path="res://assets/images/title-screen.jpg" id="1_c5oah"]
+[ext_resource type="Texture2D" uid="uid://clxobvi5gf8f4" path="res://assets/images/game_logo.png" id="2_ofqgf"]
 
 [sub_resource type="SystemFont" id="SystemFont_ifu3w"]
 font_names = PackedStringArray("Century")
@@ -17,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_b02bs")
 
 [node name="bg" type="TextureRect" parent="."]
 layout_mode = 2
@@ -55,14 +56,6 @@ layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_ifu3w")
 theme_override_font_sizes/font_size = 34
 text = "INICIAR"
-icon_alignment = 1
-expand_icon = true
-
-[node name="save_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_ifu3w")
-theme_override_font_sizes/font_size = 34
-text = "SALVAR"
 icon_alignment = 1
 expand_icon = true
 
@@ -105,3 +98,6 @@ text = "A Lenda da
 Pedra Ancestral"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]
